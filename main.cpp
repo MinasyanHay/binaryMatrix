@@ -1,28 +1,30 @@
 #include "hider.hpp"
-int main(){
-	 int matrix[5][5];
-	cout<<"Input your matrix!"<<endl;
-	
-	 for(int i=0;i<5;i++){   
-	   	 for(int j=0;j<5;j++){
-     			cin>>matrix[i][j];
-         }
-         
-         }
-	 //print MY MATRIX	 
-         cout << "MY MATRIX"<<endl;
-	 for(int i=0;i<5;i++){   
-	   	 for(int j=0;j<5;j++){
-     			 cout<<matrix[i][j]<<" ";
-         }
-         cout<<endl;
-         }
 
+int main()
+	{
+		srand(time(NULL));
+		int matrix[5][5];	
+	       	//Input my matrix
+		cout<<"Input your matrix!"<<endl;
+		for(int i=0;i<5;i++)
+			{   
+				for(int j=0;j<5;j++)
+					{
+					//	cin>>matrix[i][j];
+						 matrix[i][j]= 2+(rand() % 10) + 1;
+						 cout << matrix[i][j]<<" ";
+				       	}
+				
+				cout<<endl;
+         		 }
+	
+	
 	 //upcalculate number to bynary
 	 int len=0;
 	 int* arrup;
 	 int number=upcalculate(matrix);
-	 cout <<"My up calculate number = "<<upcalculate(matrix)<<endl;
+	 cout << "*************************************" <<endl;
+	 cout << "My up calculate number = " <<upcalculate(matrix)<<endl;
 	 arrup = bynary(number, arrup,len);
 	 cout << "up calculate to bynary = ";
 	 for(int i=0;i<len;i++)
@@ -34,6 +36,7 @@ int main(){
 	 int len1=0;
 	 int* arrdown;
 	 int number1=downcalculate(matrix);
+	 cout << "*************************************" <<endl;
 	 cout << "My down calculate number = "<<downcalculate(matrix)<<endl;
          cout<<"down calculate to bynary = ";
        	 arrdown =bynary(number1,arrdown,len1);
@@ -41,6 +44,8 @@ int main(){
 		cout<<arrdown[i];
          cout<<endl;
        
+	 cout << "*************************************"<<endl;
+	 cout << "MY new matrix" <<endl;
          newmatrix(matrix,arrdown,arrup);	 
 	 for(int i=0;i<5;i++){
 		for(int j=0;j<5;j++){
